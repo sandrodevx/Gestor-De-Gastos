@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Gastos</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestor de Gastos</h1>
+
+        <!-- Formulario para agregar transacciones -->
+         <div class="transaction-input">
+            <input type="text" id="description" placeholder="Descripción">
+            <select id="category">
+                <option value="comida">Comida</option>
+                <option value="transporte">Transporte</option>
+                <option value="ocio">Ocio</option>
+                <option value="otros">Otros</option>
+            </select>
+            <select id="type">
+                <option value="ingreso">Ingreso</option>
+                <option value="gasto">Gasto</option>
+            </select>
+            <input type="number" id="amount" placeholder="Monto">
+            <input type="date" id="date">
+            <button id="addTransaction">Agregar</button>
+
+         </div>
+
+         <!-- Balance -->
+
+         <div class="balance">
+            <h2>Balance: <span id="balanceAmount">0</span></h2>
+            <p>Ingresos: <span id="totalIncome">0</span></p>
+            <p>Gastos: <span id="totalExpense">0</span></p>
+         </div>
+
+         <!-- Graficos -->
+         <div class="charts">
+            <canvas id="barChart"></canvas>
+            <canvas id="pieChart"></canvas>
+         </div>
+
+         <!-- Lista de transacciones -->
+         <ul id="transactionList"></ul>
+
+         <!-- Boton para exportar datos -->
+          <button id="exportData">Exportar CSV</button>
+
+    </div>
+</body>
+</html>
